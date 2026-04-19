@@ -5,6 +5,7 @@ import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { NAV_ITEMS } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations';
+import { publicAsset } from '../utils/assets';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center cursor-pointer relative z-10" onClick={() => navigate('/')}>
             <div className="flex flex-col items-start gap-0.5">
-              <img src="/images/kof-logo.png" alt="KOF Logo" className="h-9 w-auto object-contain brightness-0 invert" />
+              <img src={publicAsset('/images/kof-logo.png')} alt="KOF Logo" className="h-9 w-auto object-contain brightness-0 invert" />
               <span className="text-[8px] md:text-[10px] font-bold text-sky-500 tracking-wider uppercase leading-none opacity-90">
                 Koperasi One Fintech Berhad
               </span>

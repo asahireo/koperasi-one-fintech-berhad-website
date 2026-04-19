@@ -2,6 +2,7 @@ import React from 'react';
 import { FileText, Download } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations';
+import { publicAsset } from '../utils/assets';
 
 const RESOURCES = [
   { name: "Company Profile", file: "company_profile.pdf" },
@@ -54,7 +55,7 @@ const Resources: React.FC = () => {
                 <span className="font-medium text-white/90 group-hover:text-white text-lg transition-colors">{res.name}</span>
               </div>
               <a
-                href={`/pdfs/${res.file}`}
+                href={publicAsset(`/pdfs/${res.file}`)}
                 download
                 className="inline-flex justify-center items-center px-6 py-2 bg-sky-500/10 text-sky-500 border border-sky-500/30 rounded-xl font-bold text-sm tracking-wider hover:bg-sky-600 hover:text-black hover:shadow-lg transition-all "
                 target="_blank"

@@ -82,8 +82,32 @@ const MiPay: React.FC = () => {
                                 <div className="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
                                 <div className="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
                                 <div className="h-[64px] w-[3px] bg-slate-900 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
-                                <div className="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-slate-800">
-                                    <img src="/images/mipay-app-screen.png" className="w-full h-full object-cover" alt="MiPay App Screen" />
+                                <div className="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-gradient-to-b from-red-50 to-white p-5 text-red-950">
+                                    <div className="flex items-center justify-between mb-8">
+                                        <div>
+                                            <p className="text-xs font-bold uppercase tracking-widest text-red-500">MiPAY</p>
+                                            <p className="text-xl font-black">Wallet</p>
+                                        </div>
+                                        <div className="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center">
+                                            <Smartphone size={18} />
+                                        </div>
+                                    </div>
+                                    <div className="rounded-2xl bg-gradient-to-br from-red-700 to-red-950 text-white p-5 shadow-xl mb-6">
+                                        <p className="text-xs opacity-70 mb-8">Available Balance</p>
+                                        <p className="text-3xl font-black">RM 1,280.00</p>
+                                    </div>
+                                    <div className="grid grid-cols-3 gap-3">
+                                        {[Banknote, Download, CreditCard].map((Icon, idx) => (
+                                            <div key={idx} className="aspect-square rounded-2xl bg-red-100 flex items-center justify-center text-red-700">
+                                                <Icon size={22} />
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="mt-8 space-y-3">
+                                        <div className="h-4 rounded bg-red-100 w-3/4"></div>
+                                        <div className="h-4 rounded bg-red-100 w-full"></div>
+                                        <div className="h-4 rounded bg-red-100 w-2/3"></div>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -175,11 +199,20 @@ const MiPay: React.FC = () => {
                         <div className="relative">
                             {/* Card Visual - Static Image */}
                             <div className="relative group hover:scale-105 transition-transform duration-500">
-                                <img
-                                    src="/images/mipay-card.png"
-                                    alt="MiPay Card"
-                                    className="w-full aspect-[1.585] rounded-[20px] shadow-2xl object-cover ring-1 ring-white/10"
-                                />
+                                <div className="w-full aspect-[1.585] rounded-xl shadow-2xl ring-1 ring-white/10 bg-gradient-to-br from-red-950 via-red-700 to-red-500 p-8 flex flex-col justify-between overflow-hidden">
+                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(255,255,255,0.28),transparent_28%)]"></div>
+                                    <div className="relative flex justify-between items-start">
+                                        <div>
+                                            <p className="text-white/70 text-xs font-bold tracking-widest uppercase">MiPAY</p>
+                                            <p className="text-white text-2xl font-black">Prepaid Mastercard</p>
+                                        </div>
+                                        <CreditCard className="text-white" size={34} />
+                                    </div>
+                                    <div className="relative">
+                                        <div className="w-14 h-10 rounded-lg bg-yellow-300/80 mb-8"></div>
+                                        <p className="text-white/90 tracking-[0.35em] text-lg">5258  ****  ****  2026</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

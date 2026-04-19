@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Linkedin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations';
+import { publicAsset } from '../utils/assets';
 
 const Footer: React.FC = () => {
   const { language } = useLanguage();
@@ -18,7 +19,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex flex-col items-start leading-none">
-              <img src="/images/kof-logo.png" alt="KOF Logo" className="h-14 w-auto object-contain brightness-0 invert" />
+              <img src={publicAsset('/images/kof-logo.png')} alt="KOF Logo" className="h-14 w-auto object-contain brightness-0 invert" />
               <span className="text-[10px] font-bold text-sky-500 mt-2 tracking-widest uppercase">
                 AI Fintech ecosystem
               </span>

@@ -6,6 +6,7 @@ import { SOLUTIONS_DATA, PAIN_POINTS, PRICING_TIERS } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations';
 import DataCoreModel from '../components/DataCoreModel';
+import { publicAsset } from '../utils/assets';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -279,7 +280,7 @@ const Home: React.FC = () => {
             className="relative w-full aspect-square max-w-lg mx-auto"
           >
             <div className="absolute inset-0 bg-sky-500/10 blur-[100px] rounded-full mix-blend-screen"></div>
-            <img src="/images/cloud_network.png" alt="Cloud Network Visualization" className="relative z-10 w-full h-full object-contain animate-float-slow drop-shadow-2xl" />
+            <img src={publicAsset('/images/cloud_network.png')} alt="Cloud Network Visualization" className="relative z-10 w-full h-full object-contain animate-float-slow drop-shadow-2xl" />
           </motion.div>
         </div>
       </section>

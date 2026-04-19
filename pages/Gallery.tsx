@@ -4,6 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations';
 import { ArrowRight, Play } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { publicAsset } from '../utils/assets';
 
 const Gallery: React.FC = () => {
     const { language } = useLanguage();
@@ -87,7 +88,7 @@ const Gallery: React.FC = () => {
                     >
                         {/* Photo 6 - Pamphlet */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-[4/3]">
-                            <img src="/images/gallery/6.jpg" alt="Pamphlet Demo" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/6.jpg')} alt="Pamphlet Demo" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium">{t.captions.demo}</p>
                             </div>
@@ -95,7 +96,7 @@ const Gallery: React.FC = () => {
 
                         {/* Photo 5 - Screen Demo */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-[4/3] md:col-span-2">
-                            <img src="/images/gallery/5.jpg" alt="Screen Demo" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/5.jpg')} alt="Screen Demo" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium mb-4">{t.captions.screen}</p>
                                 <button
@@ -109,7 +110,7 @@ const Gallery: React.FC = () => {
 
                         {/* Photo 4 - Interaction */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-[4/3]">
-                            <img src="/images/gallery/4.jpg" alt="Booth Interaction" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/4.jpg')} alt="Booth Interaction" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium">{t.captions.demo}</p>
                             </div>
@@ -117,7 +118,7 @@ const Gallery: React.FC = () => {
 
                         {/* Photo 7 - VIP */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-[4/3]">
-                            <img src="/images/gallery/7.jpg" alt="VIP Visit" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/7.jpg')} alt="VIP Visit" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium">{t.captions.vip}</p>
                             </div>
@@ -125,7 +126,7 @@ const Gallery: React.FC = () => {
 
                         {/* Photo 12 - Group */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-[4/3]">
-                            <img src="/images/gallery/12.jpg" alt="Team Group" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/12.jpg')} alt="Team Group" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium">{t.captions.team}</p>
                             </div>
@@ -152,7 +153,7 @@ const Gallery: React.FC = () => {
                     >
                         {/* Photo 9 - Presentation */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-video">
-                            <img src="/images/gallery/9.jpg" alt="Presentation" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/9.jpg')} alt="Presentation" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium mb-4">{t.captions.presentation}</p>
                                 <button
@@ -166,7 +167,7 @@ const Gallery: React.FC = () => {
 
                         {/* Photo 11 - Meeting Table */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-video">
-                            <img src="/images/gallery/11.jpg" alt="Meeting Table" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/11.jpg')} alt="Meeting Table" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium">{t.captions.meeting}</p>
                             </div>
@@ -174,7 +175,7 @@ const Gallery: React.FC = () => {
 
                         {/* Photo 10 - Large Group */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-video md:col-span-2">
-                            <img src="/images/gallery/10.jpg" alt="Large Group Meeting" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/10.jpg')} alt="Large Group Meeting" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium">{t.captions.briefing}</p>
                             </div>
@@ -202,7 +203,7 @@ const Gallery: React.FC = () => {
                     >
                         {/* Photo 8 - Selfie */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-[4/3]">
-                            <img src="/images/gallery/8.jpg" alt="Selfie" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/8.jpg')} alt="Selfie" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium">{t.captions.selfie}</p>
                             </div>
@@ -210,7 +211,7 @@ const Gallery: React.FC = () => {
 
                         {/* Photo 3 - Group */}
                         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-xl border border-sky-500/20 shadow-lg hover:border-sky-500/60 hover:shadow-lg aspect-[4/3]">
-                            <img src="/images/gallery/3.jpg" alt="Group Network" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={publicAsset('/images/gallery/3.jpg')} alt="Group Network" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                                 <p className="text-white font-medium">{t.captions.vip}</p>
                             </div>
