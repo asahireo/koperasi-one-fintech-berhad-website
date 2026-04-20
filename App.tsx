@@ -5,9 +5,9 @@ import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import { AnimatePresence } from 'framer-motion';
 import { LanguageProvider } from './contexts/LanguageContext';
+import Home from './pages/Home';
 
 // Lazy load pages
-const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
 const Solutions = React.lazy(() => import('./pages/Solutions'));
 const SolutionDetail = React.lazy(() => import('./pages/SolutionDetail'));
