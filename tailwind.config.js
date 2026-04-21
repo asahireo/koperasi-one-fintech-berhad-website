@@ -6,20 +6,26 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+        display: ['"Sora"', '"Space Grotesk"', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
         orbitron: ['Orbitron', 'sans-serif'],
         rajdhani: ['Rajdhani', 'sans-serif'],
       },
       colors: {
         kof: {
-          primary: '#0F172A',
-          secondary: '#1E293B',
-          accent: '#38BDF8',
-          purple: '#0284C7',
-          red: '#E11D48',
-          glass: 'rgba(15, 23, 42, 0.8)',
-          glassBorder: 'rgba(56, 189, 248, 0.2)',
+          primary: '#05060A',
+          secondary: '#0D1018',
+          accent: '#BF80FF',
+          purple: '#7C3AED',
+          red: '#E9ECF7',
+          glass: 'rgba(12, 16, 24, 0.72)',
+          glassBorder: 'rgba(255, 255, 255, 0.1)',
         }
+      },
+      boxShadow: {
+        glow: '0 0 0 1px rgba(255,255,255,0.06), 0 24px 80px rgba(6,8,14,0.55)',
+        violet: '0 0 40px rgba(191, 128, 255, 0.2)',
       },
       animation: {
         'blob': 'blob 7s infinite',
@@ -27,6 +33,7 @@ export default {
         'float-slow': 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out 3s infinite',
         'scanline': 'scanline 10s linear infinite',
+        'drift': 'drift 14s ease-in-out infinite',
       },
       keyframes: {
         blob: {
@@ -46,6 +53,10 @@ export default {
         scanline: {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(100%)' }
+        },
+        drift: {
+          '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
+          '50%': { transform: 'translate3d(0, -12px, 0)' },
         }
       }
     }
