@@ -22,3 +22,19 @@ Object.defineProperty(window, 'IntersectionObserver', {
   value: MockIntersectionObserver,
   writable: true,
 });
+
+Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
+  value: () => ({
+    clearRect: () => {},
+    beginPath: () => {},
+    arc: () => {},
+    fill: () => {},
+    moveTo: () => {},
+    lineTo: () => {},
+    stroke: () => {},
+    fillStyle: '',
+    strokeStyle: '',
+    lineWidth: 0,
+  }),
+  writable: true,
+});
