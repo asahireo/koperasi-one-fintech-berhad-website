@@ -6,6 +6,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: { en: 'Platform', ms: 'Platform' }, path: '/platform' },
   { label: { en: 'Products', ms: 'Produk' }, path: '/products' },
   { label: { en: 'Company', ms: 'Syarikat' }, path: '/company' },
+  { label: { en: 'Gallery', ms: 'Galeri' }, path: '/gallery' },
   { label: { en: 'Resources', ms: 'Sumber' }, path: '/resources' },
   { label: { en: 'Contact', ms: 'Hubungi' }, path: '/contact' },
 ];

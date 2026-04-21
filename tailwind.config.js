@@ -16,8 +16,8 @@ export default {
         kof: {
           primary: '#05060A',
           secondary: '#0D1018',
-          accent: '#BF80FF',
-          purple: '#7C3AED',
+          accent: '#7AA2FF',
+          purple: '#4F6BFF',
           red: '#E9ECF7',
           glass: 'rgba(12, 16, 24, 0.72)',
           glassBorder: 'rgba(255, 255, 255, 0.1)',
@@ -25,7 +25,7 @@ export default {
       },
       boxShadow: {
         glow: '0 0 0 1px rgba(255,255,255,0.06), 0 24px 80px rgba(6,8,14,0.55)',
-        violet: '0 0 40px rgba(191, 128, 255, 0.2)',
+        violet: '0 0 40px rgba(122, 162, 255, 0.22)',
       },
       animation: {
         'blob': 'blob 7s infinite',
