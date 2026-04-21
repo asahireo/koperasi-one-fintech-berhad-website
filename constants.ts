@@ -3,20 +3,9 @@ import { FileSpreadsheet, Users, BarChart2, Database, ShieldAlert, DollarSign } 
 
 export const NAV_ITEMS: NavItem[] = [
   { label: { en: 'Home', ms: 'Utama' }, path: '/' },
-  { label: { en: 'About', ms: 'Tentang' }, path: '/about' },
-  {
-    label: { en: 'Solutions', ms: 'Solusi' },
-    path: '/solutions',
-    subItems: [
-      { label: { en: 'ICMIS', ms: 'ICMIS' }, path: '/solutions/icmis' },
-      { label: { en: 'KoSMART', ms: 'KoSMART' }, path: '/solutions/kosmart' },
-      { label: { en: 'iAccount', ms: 'iAccount' }, path: '/solutions/iaccount' },
-      { label: { en: 'iMembership', ms: 'iMembership' }, path: '/solutions/imembership' },
-      { label: { en: 'iLMS', ms: 'iLMS' }, path: '/solutions/ilms' },
-    ],
-  },
-  { label: { en: 'Smart Partner', ms: 'Smart Partner' }, path: '/smart-partner' },
-  { label: { en: 'Gallery', ms: 'Galeri' }, path: '/gallery' },
+  { label: { en: 'Platform', ms: 'Platform' }, path: '/platform' },
+  { label: { en: 'Products', ms: 'Produk' }, path: '/products' },
+  { label: { en: 'Company', ms: 'Syarikat' }, path: '/company' },
   { label: { en: 'Resources', ms: 'Sumber' }, path: '/resources' },
   { label: { en: 'Contact', ms: 'Hubungi' }, path: '/contact' },
 ];

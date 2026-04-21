@@ -6,10 +6,11 @@ import ChatWidget from './components/ChatWidget';
 import { AnimatePresence } from 'framer-motion';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Home from './pages/Home';
+import Platform from './pages/Platform';
+import Products from './pages/Products';
+import Company from './pages/Company';
 
 // Lazy load pages
-const About = React.lazy(() => import('./pages/About'));
-const Solutions = React.lazy(() => import('./pages/Solutions'));
 const SolutionDetail = React.lazy(() => import('./pages/SolutionDetail'));
 const SmartPartner = React.lazy(() => import('./pages/SmartPartner'));
 const Resources = React.lazy(() => import('./pages/Resources'));
@@ -38,15 +39,18 @@ const App: React.FC = () => {
   return (
     <LanguageProvider>
       <Router>
-        <div className="min-h-screen flex flex-col relative">
+        <div className="site-shell min-h-screen flex flex-col relative">
           <ScrollToTop />
           <Navbar />
           <main className="flex-grow relative">
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/solutions" element={<Solutions />} />
+                <Route path="/platform" element={<Platform />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/company" element={<Company />} />
+                <Route path="/about" element={<Company />} />
+                <Route path="/solutions" element={<Products />} />
                 <Route path="/solutions/:id" element={<SolutionDetail />} />
                 <Route path="/smart-partner" element={<SmartPartner />} />
                 <Route path="/resources" element={<Resources />} />

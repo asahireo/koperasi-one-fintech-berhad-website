@@ -1,349 +1,154 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Orbit, ShieldCheck, Sparkles, Workflow } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, TrendingUp, Wallet } from 'lucide-react';
-import DataCoreModel from '../components/DataCoreModel';
+import ParticleField from '../components/ParticleField';
+import ProductShowcase from '../components/ProductShowcase';
+import SectionHeading from '../components/SectionHeading';
+import SurfaceCard from '../components/SurfaceCard';
 import { useLanguage } from '../contexts/LanguageContext';
-import { PAIN_POINTS, PRICING_TIERS, SOLUTIONS_DATA } from '../constants';
-import { translations } from '../translations';
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
   const { language } = useLanguage();
-  const t = translations[language];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
+  const copy = {
+    en: {
+      eyebrow: 'AetherFlow Ecosystem',
+      title: 'A futuristic operating layer for cooperative finance.',
+      description:
+        'KOF reframes accounting, member management, lending, and partner programs as one connected digital environment instead of a set of disconnected tools.',
+      primaryCta: 'Explore The Platform',
+      secondaryCta: 'View Products',
+      trustTitle: 'Built with cooperative credibility and system discipline.',
+      trustBody:
+        'Supported by experienced digital operators and shaped around real cooperative workflows, not just generic SaaS dashboards.',
+      stats: [
+        ['5', 'Integrated products'],
+        ['1', 'Operating surface'],
+        ['24/7', 'System visibility'],
+      ],
+      pillars: [
+        {
+          title: 'Structured Modules',
+          body: 'Each system is designed to move as part of the platform, not as an isolated silo.',
+        },
+        {
+          title: 'Clear Data Movement',
+          body: 'Membership, lending, and finance are framed with more predictable operational flow.',
+        },
+        {
+          title: 'Premium Interaction',
+          body: 'User and operator touchpoints feel alive, controlled, and premium.',
+        },
+      ],
+      productsTitle: 'Core systems that build the ecosystem.',
+      productsBody: 'Go directly into the modules that matter most, or see how they are orchestrated as one platform.',
     },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    ms: {
+      eyebrow: 'Ekosistem AetherFlow',
+      title: 'Lapisan operasi futuristik untuk kewangan koperasi.',
+      description:
+        'KOF membingkaikan perakaunan, pengurusan ahli, pinjaman, dan program rakan kongsi sebagai satu persekitaran digital yang saling terhubung, bukan set alat yang berpecah.',
+      primaryCta: 'Terokai Platform',
+      secondaryCta: 'Lihat Produk',
+      trustTitle: 'Dibina dengan kredibiliti koperasi dan disiplin sistem.',
+      trustBody:
+        'Disokong oleh operator digital berpengalaman dan dibentuk mengikut aliran kerja koperasi sebenar, bukan sekadar papan pemuka SaaS generik.',
+      stats: [
+        ['5', 'Produk bersepadu'],
+        ['1', 'Permukaan operasi'],
+        ['24/7', 'Pandangan sistem'],
+      ],
+      pillars: [
+        {
+          title: 'Modul Tersusun',
+          body: 'Setiap sistem direka untuk bergerak sebagai sebahagian daripada platform, bukan silo yang terpisah.',
+        },
+        {
+          title: 'Aliran Data Jelas',
+          body: 'Pengurusan ahli, pinjaman, dan kewangan dibingkaikan dengan aliran operasi yang lebih boleh dijangka.',
+        },
+        {
+          title: 'Interaksi Premium',
+          body: 'Titik sentuhan pengguna dan pentadbir kelihatan hidup, kemas, dan meyakinkan.',
+        },
+      ],
+      productsTitle: 'Sistem teras yang membina ekosistem.',
+      productsBody: 'Masuk ke modul yang paling relevan, atau lihat bagaimana semuanya diorkestrasi sebagai satu platform.',
     },
-  };
+  }[language];
+
+  const pillarIcons = [Workflow, Orbit, Sparkles];
 
   return (
-    <div>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center lg:items-start lg:w-[55%]"
-          >
-            <motion.div
-              variants={itemVariants}
-              className="inline-block mb-6 px-4 py-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 backdrop-blur-md shadow-sm"
-            >
-              <span className="text-sky-500 font-rajdhani font-bold text-sm tracking-widest uppercase">
-                The Future of AI-Driven Finance
-              </span>
-            </motion.div>
+    <div className="overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8">
+        <ParticleField className="absolute inset-0 h-full w-full opacity-85" density={11000} />
+        <div className="ambient-orb left-[4%] top-20 h-60 w-60 bg-violet-500/20" />
+        <div className="ambient-orb right-[6%] top-28 h-72 w-72 bg-white/10" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
+            <span className="eyebrow-label">{copy.eyebrow}</span>
+            <h1 className="mt-8 max-w-4xl text-6xl font-semibold tracking-[-0.08em] text-white md:text-7xl lg:text-[5.7rem]">
+              {copy.title}
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/68 md:text-xl">
+              {copy.description}
+            </p>
 
-            <motion.h1
-              variants={itemVariants}
-              className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-none drop-shadow-lg"
-            >
-              {t.hero.headline}
-            </motion.h1>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-xl md:text-2xl text-white/80 font-rajdhani max-w-2xl mx-auto mb-12 leading-relaxed drop-shadow-md"
-            >
-              {t.hero.subheadline}
-            </motion.p>
-
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <motion.button
-                onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
-                whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(0, 242, 255, 0.5)' }}
-                whileTap={{ scale: 0.95 }}
-                className="group px-10 py-4 bg-sky-600 text-white font-bold text-lg rounded-xl hover:bg-white transition-all duration-300 flex items-center gap-3"
-              >
-                {t.hero.btnSolution}
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-
-              <motion.button
-                onClick={() => navigate('/smart-partner')}
-                whileHover={{ scale: 1.05, borderColor: 'rgba(189, 0, 255, 0.5)' }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-transparent border-2 border-kof-purple/30 text-slate-300 font-bold text-lg hover:bg-slate-800 hover:text-white transition-all duration-300 shadow-lg backdrop-blur-md rounded-xl"
-              >
-                {t.hero.btnPartner}
-              </motion.button>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3, type: 'spring' }}
-            className="hidden lg:block lg:w-[45%] relative z-10"
-          >
-            <div className="relative w-full aspect-square max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-sky-500/20 blur-[100px] rounded-full mix-blend-screen scale-150 pointer-events-none" />
-              <div className="absolute inset-10 bg-slate-400/10 blur-[50px] rounded-full mix-blend-overlay pointer-events-none" />
-              <DataCoreModel />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto px-4"
-        >
-          <div className="glass-panel rounded-2xl p-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 hover:shadow-2xl hover:shadow-black/20">
-            <p className="text-sm font-semibold text-white/60 uppercase tracking-widest">Trusted By</p>
-            <div className="flex gap-12 items-center opacity-80 hover:opacity-100 transition-all duration-500">
-              <a
-                href="https://tfp.com.my/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xl font-bold text-white hover:text-red-400 transition-colors"
-              >
-                TFP Solutions Berhad
-              </a>
-              <div className="h-6 w-px bg-white/20 hidden md:block" />
-              <a
-                href="https://www.mobilityone.com.my/v7/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xl font-bold text-white hover:text-red-400 transition-colors"
-              >
-                MobilityOne Sdn Bhd
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">{t.painPoints.title}</h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-kof-accent to-kof-purple mx-auto mb-6" />
-            <p className="mt-4 text-white/70 text-lg font-rajdhani tracking-wide">{t.painPoints.subtitle}</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PAIN_POINTS.map((point, i) => (
-              <motion.div
-                key={point.title.en}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.2 } }}
-                className="glass-card p-8 rounded-2xl group"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-white mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm border border-white/10">
-                  <point.icon size={28} />
-                </div>
-                <h3 className="font-bold text-xl text-white mb-3">{point.title[language]}</h3>
-                <p className="text-white/70 leading-relaxed">{point.desc[language]}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="solutions" className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-20">
-            <span className="text-sky-500 font-bold tracking-widest text-xs uppercase bg-sky-500/10 border border-sky-500/20 px-4 py-2 rounded-xl shadow-sm">
-              System Architecture
-            </span>
-            <h2 className="text-5xl md:text-6xl font-black text-white mt-8 mb-4 drop-shadow-lg">{t.solutions.title}</h2>
-            <div className="h-1 w-32 bg-gradient-to-r from-kof-purple to-kof-accent mx-auto mb-12" />
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.values(SOLUTIONS_DATA).map((solution, i) => (
-              <motion.div
-                key={solution.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.02 }}
-                className="group relative glass-card rounded-3xl p-8 overflow-hidden shadow-sm hover:shadow-xl"
-              >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white to-white/50 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                <h3 className="text-3xl font-bold text-white mb-4">{solution.title}</h3>
-                <p className="text-white/80 mb-8 min-h-[3rem] text-lg">{solution.description[language]}</p>
-                <ul className="space-y-4 mb-10">
-                  {solution.features[language].slice(0, 3).map((feature) => (
-                    <li key={feature} className="flex items-center text-white/90">
-                      <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-white group-hover:text-red-900 transition-colors">
-                        <CheckCircle2 size={14} className="text-white group-hover:text-red-900" />
-                      </div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => navigate(solution.link)}
-                  className="w-full py-4 rounded-xl border border-sky-500/30 text-sky-500 font-bold group-hover:bg-sky-600 group-hover:text-white transition-all flex items-center justify-center gap-2"
-                >
-                  {t.solutions.learnMore}
-                  <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-                </button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-black/20 text-white relative overflow-hidden rounded-t-[3rem] mt-20 border-t border-white/10">
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 5, repeat: Infinity }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-slate-800 opacity-20 blur-[120px] rounded-full translate-x-1/3 -translate-y-1/3"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
-          transition={{ duration: 7, repeat: Infinity, delay: 1 }}
-          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-600 opacity-10 blur-[100px] rounded-full -translate-x-1/3 translate-y-1/3"
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight drop-shadow-md">{t.smartPartner.heroTitle}</h2>
-            <p className="text-white/80 text-xl mb-10 leading-relaxed">{t.smartPartner.heroDesc}</p>
-
-            <div className="space-y-6 mb-10">
-              <div className="flex items-start group">
-                <div className="p-3 bg-white/10 rounded-2xl mr-5 group-hover:bg-white group-hover:text-red-900 transition-colors">
-                  <TrendingUp className="text-white group-hover:text-red-900 w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg">{t.smartPartner.passiveIncome}</h4>
-                  <p className="text-white/60">{t.smartPartner.passiveIncomeDesc}</p>
-                </div>
-              </div>
-
-              <div className="flex items-start group">
-                <div className="p-3 bg-white/10 rounded-2xl mr-5 group-hover:bg-white group-hover:text-red-900 transition-colors">
-                  <Wallet className="text-white group-hover:text-red-900 w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg">{t.smartPartner.superApp}</h4>
-                  <p className="text-white/60">{t.smartPartner.superAppDesc}</p>
-                </div>
-              </div>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link to="/platform" className="primary-button">
+                <span>{copy.primaryCta}</span>
+                <ArrowRight size={18} />
+              </Link>
+              <Link to="/products" className="secondary-button">
+                <span>{copy.secondaryCta}</span>
+                <ArrowRight size={18} />
+              </Link>
             </div>
 
-            <button
-              onClick={() => navigate('/smart-partner')}
-              className="bg-sky-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-lg transition-all"
-            >
-              {t.smartPartner.joinBtn}
-            </button>
+            <div className="mt-16 grid gap-5 sm:grid-cols-3">
+              {copy.stats.map(([value, label]) => (
+                <SurfaceCard key={label} className="p-5">
+                  <div className="text-3xl font-semibold text-white">{value}</div>
+                  <div className="mt-2 text-sm uppercase tracking-[0.18em] text-white/46">{label}</div>
+                </SurfaceCard>
+              ))}
+            </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative w-full aspect-square max-w-lg mx-auto"
-          >
-            <div className="absolute inset-0 bg-sky-500/10 blur-[100px] rounded-full mix-blend-screen" />
-            <img
-              src="/images/cloud_network.png"
-              alt="Cloud Network Visualization"
-              className="relative z-10 w-full h-full object-contain animate-float-slow drop-shadow-2xl"
-            />
-          </motion.div>
+          <SurfaceCard strong className="relative overflow-hidden p-8 md:p-10">
+            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+            <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/12 bg-white/5 text-violet-200">
+              <ShieldCheck size={24} />
+            </div>
+            <h2 className="max-w-md text-4xl font-semibold tracking-[-0.06em] text-white">{copy.trustTitle}</h2>
+            <p className="mt-5 max-w-lg leading-7 text-white/62">{copy.trustBody}</p>
+            <div className="mt-12 space-y-4">
+              {copy.pillars.map((pillar, index) => {
+                const Icon = pillarIcons[index];
+
+                return (
+                  <div key={pillar.title} className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
+                    <div className="flex items-center gap-3 text-white">
+                      <Icon size={18} className="text-violet-200" />
+                      <h3 className="font-medium">{pillar.title}</h3>
+                    </div>
+                    <p className="mt-3 text-sm leading-6 text-white/60">{pillar.body}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </SurfaceCard>
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl font-bold text-white mb-16 drop-shadow-md"
-          >
-            {t.pricing.title}
-          </motion.h2>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {PRICING_TIERS.map((tier, i) => (
-              <motion.div
-                key={tier.label.en}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -10, borderColor: 'rgba(255, 255, 255, 0.3)' }}
-                className="p-8 glass-card rounded-2xl hover:border-white/30 group cursor-default"
-              >
-                <div className="text-sm text-white/60 mb-4 min-h-[40px] flex items-center justify-center font-medium uppercase tracking-wide">
-                  {tier.label[language]}
-                </div>
-                <div className="text-3xl font-bold text-white group-hover:text-white transition-colors">{tier.value}</div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-16">
-            <button
-              onClick={() => navigate('/contact?type=quotation')}
-              className="inline-flex items-center text-white font-bold text-lg hover:underline decoration-2 underline-offset-4 group"
-            >
-              {t.pricing.cta}
-              <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </button>
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading title={copy.productsTitle} description={copy.productsBody} />
+          <div className="mt-14">
+            <ProductShowcase compact />
           </div>
         </div>
-      </section>
-
-      <section className="py-32 text-center px-4 relative overflow-hidden bg-black/20 border-t border-white/10">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 -z-10" />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 max-w-3xl mx-auto leading-tight">
-            {t.ctaFooter.title}
-          </h2>
-          <p className="text-white/70 mb-12 max-w-xl mx-auto text-xl font-rajdhani tracking-wide">{t.ctaFooter.desc}</p>
-          <button
-            onClick={() => navigate('/contact')}
-            className="bg-slate-800 text-white px-12 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-slate-300 transition-all shadow-lg"
-          >
-            {t.ctaFooter.btn}
-          </button>
-        </motion.div>
       </section>
     </div>
   );
